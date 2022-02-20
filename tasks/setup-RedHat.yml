@@ -4,8 +4,8 @@
     key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
     state: present
 
-- name: Add Kibana repository.
+- name: Add Elastic repository.
   template:
-    src: kibana.repo.j2
-    dest: /etc/yum.repos.d/kibana.repo
+    src: elastic.repo.j2
+    dest: "/etc/yum.repos.d/elastic-{{ kibana_version }}.repo"
     mode: 0644
